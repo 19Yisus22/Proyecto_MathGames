@@ -8,6 +8,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, "templates")
 STATIC_DIR = os.path.join(BASE_DIR, "static")
 DATA_DIR = os.path.join(STATIC_DIR, "data")
 os.makedirs(DATA_DIR, exist_ok=True)
+
 app = Flask(__name__, template_folder=TEMPLATES_DIR, static_folder=STATIC_DIR)
 app.wsgi_app = ProxyFix(app.wsgi_app, x_proto=1, x_host=1)
 app.secret_key = os.getenv("SECRET_KEY", secrets.token_hex(24))
@@ -22,4 +23,5 @@ def modulos_render(modulo):
     return render_template(ruta)
 
 if __name__ == "__main__":
-    app.run(debug=False, port=7070)
+    port = int(os.getenv("PORT", 7070))
+    app.run(debug=False, host="0.0.0.0", port=port)
