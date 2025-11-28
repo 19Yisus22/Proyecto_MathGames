@@ -1,0 +1,65 @@
+body.bg-dark-purple {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+}
+.sudoku-card {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  max-width: 600px;
+}
+.sudoku-card.dark {
+  background: #2d3748;
+  color: white;
+}
+.board {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  gap: 0;
+  background: #6c757d;
+  padding: 2px;
+  border: 2px solid #6c757d;
+}
+.cell-wrap {
+  position: relative;
+}
+.cell {
+  width: 100%;
+  aspect-ratio: 1;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: 1px solid #6c757d;
+  background: white;
+}
+.cell.fixed {
+  background: #e9ecef;
+  color: #212529;
+}
+.cell.error {
+  background: #f8d7da;
+  color: #842029;
+}
+.cell.autofill {
+  background: #d1e7dd;
+  color: #0f5132;
+}
+.cell.focused {
+  outline: 3px solid #0d6efd;
+  outline-offset: -3px;
+  z-index: 10;
+}
+.candidates {
+  font-size: 0.6rem;
+  line-height: 1;
+  color: #6c757d;
+}
+.dark .cell {
+  background: #4a5568;
+  color: white;
+  border-color: #2d3748;
+}
+.dark .cell.fixed {
+  background: #2d3748;
+  color: #cbd5e0;
+}
