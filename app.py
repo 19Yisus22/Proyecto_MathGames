@@ -22,4 +22,4 @@ def modulos_render(modulo):
     return render_template(ruta)
 
 if __name__ == "__main__":
-    app.run(debug=True, port=7070)
+    app.run(debug=False, port=7070)
